@@ -8,22 +8,12 @@
 		{
 			id: 1,
 			label: 'Features',
-			href: '#'
+			href: '#features'
 		},
 		{
 			id: 2,
 			label: 'Pricing',
-			href: '#'
-		},
-		{
-			id: 3,
-			label: 'Careers',
-			href: '#'
-		},
-		{
-			id: 4,
-			label: 'Contact Us',
-			href: '#'
+			href: '#pricing'
 		}
 	];
 
@@ -49,14 +39,8 @@
 <header
 	class="fixed left-0 top-0 z-50 w-full -translate-y-4 animate-fade-in border-b opacity-0 backdrop-blur-md"
 >
-	<!-- {#if innerWidth < 768} -->
 		<div class="container flex h-14 items-center justify-between">
-			<a class="text-md flex items-center" href="/"> Svee UI </a>
-
-			<div class="ml-auto flex h-full items-center">
-				<a class="mr-6 text-sm" href="/signin"> Log in </a>
-				<Button variant="secondary" class="mr-6 text-sm" href="/signup">Sign up</Button>
-			</div>
+			<a class="text-md gap-2 flex items-center" href="/"> <img src="/logo.svg" alt="SailMail" class="text-white" /> <span>SailMail</span> </a>
 			<button class="ml-6 md:hidden" use:toggleOverflowHidden>
 				<span class="sr-only">Toggle menu</span>
 				{#if hamburgerMenuIsOpen}
@@ -82,7 +66,7 @@
 >
 	{#if hamburgerMenuIsOpen === true}
 		<div class="container flex h-14 items-center justify-between">
-			<a class="text-md flex items-center" href="/"> Svee UI </a>
+			<a class="text-md flex items-center" href="/"> SailMail </a>
 
 			<button class="md:hidden" use:toggleOverflowHidden>
 				<span class="sr-only">Toggle menu</span>

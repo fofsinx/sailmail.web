@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LoaderIcon, CheckIcon } from 'lucide-svelte';
+	import { LoaderIcon, CheckIcon, Check } from 'lucide-svelte';
 	import Switch from '$lib/components/ui/switch/switch.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { cn } from '$lib/utils';
@@ -13,63 +13,38 @@
 	let productPrices = [
 		{
 			id: 'price_1',
-			name: 'Basic',
-			description: 'A basic plan for startups and individual users',
+			name: 'Community Edition',
+			description: 'Self-hosted, free forever for developers and small teams',
 			features: [
-				'AI-powered analytics',
-				'Basic support',
-				'5 projects limit',
-				'Access to basic AI tools'
+				'Unlimited emails/month',
+				'Unlimited contacts',
+				'Single team',
+				'Basic templates',
+				'REST API access',
+				'Community support',
+				'Self-hosted deployment'
 			],
-			monthlyPrice: 1000,
-			yearlyPrice: 10000,
-			isMostPopular: false
-		},
-		{
-			id: 'price_2',
-			name: 'Premium',
-			description: 'A premium plan for growing businesses',
-			features: [
-				'Advanced AI insights',
-				'Priority support',
-				'Unlimited projects',
-				'Access to all AI tools',
-				'Custom integrations'
-			],
-			monthlyPrice: 2000,
-			yearlyPrice: 20000,
+			monthlyPrice: 0,
+			yearlyPrice: 0,
 			isMostPopular: true
 		},
 		{
 			id: 'price_5',
 			name: 'Enterprise',
-			description: 'An enterprise plan with advanced features for large organizations',
+			description: 'Custom solutions for large-scale email operations',
 			features: [
-				'Custom AI solutions',
-				'24/7 dedicated support',
-				'Unlimited projects',
-				'Access to all AI tools',
+				'Unlimited emails/month',
+				'Priority support & SLA',
+				'Multiple teams',
+				'Advanced templates',
 				'Custom integrations',
-				'Data security and compliance'
+				'Advanced analytics',
+				'Security features',
+				'Dedicated account manager',
+				'Custom deployment options'
 			],
-			monthlyPrice: 5000,
-			yearlyPrice: 50000,
-			isMostPopular: false
-		},
-		{
-			id: 'price_6',
-			name: 'Ultimate',
-			description: 'The ultimate plan with all features for industry leaders',
-			features: [
-				'Bespoke AI development',
-				'White-glove support',
-				'Unlimited projects',
-				'Priority access to new AI tools',
-				'Custom integrations',
-				'Highest data security and compliance'
-			],
-			monthlyPrice: 8000,
-			yearlyPrice: 80000,
+			monthlyPrice: null,
+			yearlyPrice: null,
 			isMostPopular: false
 		}
 	];
@@ -109,7 +84,7 @@
 			</p>
 		</div>
 
-		<div class="flex w-full items-center justify-center space-x-2">
+		<!-- <div class="flex w-full items-center justify-center space-x-2">
 			<Switch
 				on:click={() => {
 					interval = interval === 'month' ? 'year' : 'month';
@@ -122,13 +97,13 @@
 			>
 				2 MONTHS FREE ✨
 			</span>
-		</div>
+		</div> -->
 
-		<div class="mx-auto grid w-full flex-col justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		<div class="mt-8 grid items-start gap-4 sm:grid-cols-1 sm:space-y-0 lg:grid-cols-3">
 			{#each productPrices as price, id}
 				<div
 					class={cn(
-						'relative flex max-w-[400px] flex-col gap-8 overflow-hidden rounded-2xl border p-4 text-black dark:text-white',
+						'relative flex h-full max-w-[400px] flex-col gap-8 overflow-hidden rounded-2xl border p-4 text-black dark:text-white',
 						{
 							'border-2 border-[var(--color-one)] dark:border-[var(--color-one)]':
 								price.isMostPopular
@@ -148,14 +123,20 @@
 					{#key interval}
 						<div in:fly={{ y: 20, duration: 300, delay: id * 40 }} class="flex flex-row gap-1">
 							<span class="text-4xl font-bold text-black dark:text-white">
-								{#if interval === 'month'}
-									${toHumanPrice(price.monthlyPrice, 0)}
+								{#if price.monthlyPrice === null}
+									Custom
+								{:else if price.monthlyPrice === 0}
+									Free
 								{:else}
-									${toHumanPrice(price.yearlyPrice, 0)}
+									{#if interval === 'month'}
+										${toHumanPrice(price.monthlyPrice, 0)}
+									{:else}
+										${toHumanPrice(price.yearlyPrice, 0)}
+									{/if}
+									<span class="text-xs">
+										/ {interval}
+									</span>
 								{/if}
-								<span class="text-xs">
-									/ {interval}
-								</span>
 							</span>
 						</div>
 					{/key}
@@ -164,7 +145,7 @@
 							'group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter',
 							'transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2'
 						)}
-						disabled={isLoading}
+						disabled={isLoading || price.monthlyPrice === null}
 						on:click={() => onSubscribeClick(price.id)}
 					>
 						<span
@@ -173,8 +154,10 @@
 						{#if isLoading && index === price.id}
 							<LoaderIcon class="mr-2 size-4 animate-spin" />
 							Subscribing
+						{:else if price.monthlyPrice === null}
+							Contact Sales
 						{:else if !isLoading || (isLoading && index !== price.id)}
-							Subscribe
+							Get Started
 						{/if}
 					</Button>
 
@@ -185,8 +168,8 @@
 						<ul class="flex flex-col gap-2 font-normal">
 							{#each price.features as feature, idx}
 								<li class="flex items-center gap-3 text-xs font-medium text-black dark:text-white">
-									<CheckIcon
-										class="size-5 shrink-0  rounded-full bg-green-400 p-[2px] text-black dark:text-white"
+									<Check
+										class="size-5 shrink-0 rounded-full p-[2px] text-black dark:text-white"
 									/>
 									<span class="flex">{feature}</span>
 								</li>

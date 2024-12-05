@@ -21,7 +21,7 @@
 		class="backdrop-filter-[12px] group inline-flex h-7 -translate-y-4 animate-fade-in items-center justify-between gap-1 rounded-full border border-white/5 bg-white/10 px-3 text-xs text-white opacity-0 transition-all ease-in hover:cursor-pointer hover:bg-white/20 dark:text-black"
 	>
 		<AnimatedShinyText class="inline-flex items-center justify-center">
-			<span>✨ Introducing Svee UI Template</span>
+			<span>✨ Open Source Email Platform</span>
 			{' '}
 			<ArrowRightIcon
 				class="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
@@ -31,59 +31,30 @@
 	<h1
 		class="-translate-y-4 animate-fade-in text-balance bg-gradient-to-br from-black from-30% to-black/40 bg-clip-text py-6 text-5xl font-medium leading-none tracking-tighter text-transparent opacity-0 [--animation-delay:200ms] dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-8xl"
 	>
-		Svee UI is the new way
-		<br class="hidden md:block" />
-		{' '}
-		to build landing pages.
+		Ship Emails at Scale with Complete Control
 	</h1>
 	<p
 		class="mb-12 -translate-y-4 animate-fade-in text-balance text-lg tracking-tight text-gray-400 opacity-0 [--animation-delay:400ms] md:text-xl"
 	>
-		Beautifully designed, animated components and templates built with
+		The open-source email service platform that gives developers the power and flexibility
 		<br class="hidden md:block" />
 		{' '}
-		Tailwind CSS, <a href="https://svelte.dev" class="underline underline-offset-2">Svelte</a>, and
-		<a href="https://animation-svelte.vercel.app" class="underline underline-offset-2">Svelte Animations</a>.
+		they need, without the vendor lock-in.
 	</p>
-	<Button
-		class="-translate-y-4 animate-fade-in gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black"
-	>
-		<span>Get Started for free </span>
-		<ArrowRightIcon
-			class="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
-		/>
-	</Button>
-	<div
-		use:inview={{
-			unobserveOnEnter: true,
-			rootMargin: '-100px'
-		}}
-		on:inview_change={handleChange}
-		class="relative mt-32 animate-fade-up opacity-0 [--animation-delay:400ms] [perspective:2000px] after:absolute after:inset-0 after:z-50 after:[background:linear-gradient(to_top,hsl(var(--background))_30%,transparent)]"
-	>
-		<div
-			class="rounded-xl border border-white/10 bg-white bg-opacity-[0.01] before:absolute before:bottom-1/2 before:left-0 before:top-0 before:size-full before:opacity-0 before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] before:[filter:blur(180px)] {inView
-				? 'before:animate-image-glow'
-				: ''}"
+	<div class="flex justify-center gap-4">
+		<Button
+			class="-translate-y-4 animate-fade-in gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black"
 		>
-			<BorderBeam
-				size={200}
-				duration={12}
-				delay={0}
-				colorFrom="var(--color-one)"
-				colorTo="var(--color-two)"
+			<span>Get Started Free</span>
+			<ArrowRightIcon
+				class="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
 			/>
-
-			<img
-				src={HeroDarkImg}
-				alt="HeroDarkImage"
-				class="relative hidden size-full rounded-[inherit] border object-contain dark:block"
-			/>
-			<img
-				src={HeroLightImg}
-				alt="HeroLightImage"
-				class="relative block size-full rounded-[inherit] border object-contain dark:hidden"
-			/>
-		</div>
+		</Button>
+		<Button variant="outline" class="-translate-y-4 animate-fade-in gap-1 rounded-lg opacity-0 ease-in-out [--animation-delay:600ms]">
+			<span>View on GitHub</span>
+			<svg class="ml-2 size-4" viewBox="0 0 24 24">
+				<path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+			</svg>
+		</Button>
 	</div>
 </section>

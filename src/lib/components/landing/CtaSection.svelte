@@ -1,32 +1,32 @@
 <script lang="ts">
-	import { BarChart, ChevronRight, File, Globe, HeartHandshake, Rss, Shield } from 'lucide-svelte';
+	import { BarChart, ChevronRight, File, Globe, HeartHandshake, Rss, Shield, Mail, Ship, PersonStanding, Share2, Cloud, ContainerIcon, Hospital, Github, GithubIcon, ShipWheel, Database, UserRound } from 'lucide-svelte';
 	import Marquee from '../magic/marquee/Marquee.svelte';
 	import CtaCard from './CtaCard.svelte';
 	import Button from '../ui/button/button.svelte';
 	let tiles: { icon: any; bg: string }[] = [
 		{
-			icon: HeartHandshake,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]'
+			icon: Mail,
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		},
 		{
-			icon: Globe,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-70 blur-[20px]'
+			icon: UserRound,
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		},
 		{
-			icon: File,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-green-500 via-teal-500 to-emerald-600 opacity-70 blur-[20px]'
+			icon: Database,
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		},
 		{
 			icon: Shield,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 opacity-70 blur-[20px]'
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		},
 		{
-			icon: Rss,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]'
+			icon: ShipWheel,
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		},
 		{
-			icon: BarChart,
-			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 opacity-70 blur-[20px]'
+			icon: GithubIcon,
+			bg: 'pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 opacity-70 blur-[20px]'
 		}
 	];
 	function shuffleArray(array: any[]) {
@@ -104,11 +104,11 @@
 					<div
 						class="mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32"
 					>
-						<HeartHandshake class="mx-auto size-16 text-black dark:text-white lg:size-24" />
+						<ShipWheel class="mx-auto size-16 text-black dark:text-white lg:size-24" />
 					</div>
 					<div class="z-10 mt-4 flex flex-col items-center text-center text-primary">
-						<h1 class="text-3xl font-bold lg:text-4xl">Stop wasting time on design.</h1>
-						<p class="mt-2">Start your 7-day free trial. No credit card required.</p>
+						<h1 class="text-3xl font-bold lg:text-4xl">Ship emails with confidence</h1>
+						<p class="mt-2">Powerful email infrastructure for modern applications</p>
 						<Button size="lg" variant="outline" href="#" class="group mt-4 rounded-[2rem] px-6">
 							Get Started
 							<ChevronRight

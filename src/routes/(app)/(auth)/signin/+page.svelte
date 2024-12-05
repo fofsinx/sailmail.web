@@ -45,8 +45,8 @@
 </script>
 
 <svelte:head>
-	<title>Sign In | Svee UI</title>
-	<meta name="description" content="Sign In for Svee UI" />
+	<title>Sign In | SailMail</title>
+	<meta name="description" content="Sign In for SailMail" />
 </svelte:head>
 
 <div class="container flex h-screen w-screen flex-col items-center justify-center">

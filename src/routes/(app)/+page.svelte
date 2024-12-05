@@ -1,10 +1,12 @@
 <script>
 	import { seo } from '$lib';
-	import ClientSection from '$lib/components/landing/ClientSection.svelte';
-	import CtaSection from '$lib/components/landing/CtaSection.svelte';
 	import HeroSection from '$lib/components/landing/HeroSection.svelte';
+	import FeaturesSection from '$lib/components/landing/FeaturesSection.svelte';
+	import ClientSection from '$lib/components/landing/ClientSection.svelte';
 	import PricingSection from '$lib/components/landing/PricingSection.svelte';
+	import CtaSection from '$lib/components/landing/CtaSection.svelte';
 	import SphereMask from '$lib/components/magic/SphereMask/SphereMask.svelte';
+	import FaqSection from '$lib/components/landing/FaqSection.svelte';
 </script>
 
 <svelte:head>
@@ -26,6 +28,8 @@
 </svelte:head>
 <HeroSection />
 <ClientSection />
+<FeaturesSection />
 <SphereMask />
 <PricingSection />
+<FaqSection />
 <CtaSection />
